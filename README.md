@@ -17,3 +17,6 @@ The "Guess the Number" game allows users to guess a randomly generated number wi
 4. **Static Guess for Secret Number**: The secret number is currently static and not dynamically generated using `Math.random()`. This makes the game predictable and less engaging for the user.
 
 5. **UI Incorrectly Displaying Remaining Attempts**: Although the logic for calculating the remaining attempts is correct, the UI is displaying the wrong value for the remaining attempts.
+
+6. **Empty Input Value Accepted**: Currently, an empty input value is accepted as a valid guess, which it shouldn't be.
+
