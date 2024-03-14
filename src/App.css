@@ -97,4 +97,9 @@ input[type="number"] {
   font-size: 18px;
   color:orangered;
   margin-bottom: 10px;
+  
+}
+
+.won {
+  background-color: green;
 }
