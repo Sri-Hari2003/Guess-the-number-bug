@@ -6,14 +6,17 @@ import Button from './components/Button';
 import './App.css';
 
 const App = () => {
-  const secretNumber = 69;
-
+  const [secretNumber, setSecretNumber] = useState(generateRandomNumber());
   const [message, setMessage] = useState('');
   const [count, setCount] = useState(5); // Start with the maximum number of guesses
-  const [isWon, setIsWon] = useState(false); // Add this line
+  const [isWon, setIsWon] = useState(false);
   const maxCount = 5;
 
   const remainingAttempts = count;
+
+  function generateRandomNumber() {
+    return Math.floor(Math.random() * 100) + 1; // Generates a random number between 1 and 100
+  }
 
   const handleGuess = (value) => {
     const guessNum = parseInt(value);
@@ -21,7 +24,7 @@ const App = () => {
       if (guessNum === secretNumber) {
         setMessage('Congratulations! You guessed it right!');
         setCount(0); // Set count to 0 to prevent further guessing
-        setIsWon(true); // Add this line
+        setIsWon(true);
       } else if (guessNum > secretNumber) {
         setMessage('You guessed too high. Try again!');
         setCount(count - 1);
@@ -35,7 +38,8 @@ const App = () => {
   const resetGame = () => { 
     setMessage('');
     setCount(maxCount);
-    setIsWon(false); // 
+    setIsWon(false);
+    setSecretNumber(generateRandomNumber()); // Generate a new random number
   };
 
   useEffect(() => {
