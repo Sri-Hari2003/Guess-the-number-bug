@@ -9,9 +9,12 @@ const NumberInput = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(guess);
-    setGuess('');
+    if (guess.trim() !== '') { // Check if input value is not empty
+      onSubmit(guess);
+      setGuess('');
+    }
   };
+  
 
   return (
     <form onSubmit={handleSubmit}>

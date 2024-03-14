@@ -20,7 +20,7 @@ const App = () => {
 
   const handleGuess = (value) => {
     const guessNum = parseInt(value);
-    setCount(count + 1);
+    setCount(count - 1);
     if (count < maxCount) {
       if (guessNum === secretNumber) {
         setMessage('Congratulations! You guessed it right!');
